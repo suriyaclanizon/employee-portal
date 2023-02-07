@@ -84,10 +84,11 @@ export function Login() {
                 Forgot password?
               </Anchor>
             </Group>
-            <Button fullWidth mt="xl" size="md">
-              Login
-            </Button>
-
+            <Link to="/Punchin">
+              <Button fullWidth mt="xl" size="md">
+                Login
+              </Button>
+            </Link>
             <Text align="left" mt="md">
               New user?{" "}
               <Anchor
@@ -95,7 +96,7 @@ export function Login() {
                 weight={700}
                 onClick={(event) => event.preventDefault()}
               >
-                <Link to="SignUp"> Sign up</Link>
+                Sign up
               </Anchor>
             </Text>
           </Paper>
