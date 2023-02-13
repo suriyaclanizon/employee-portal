@@ -6,4 +6,12 @@
    font-family: Jost;
   src: url(./Fonts/Jost-Regular.ttf);
   }
+  /* th{
+    border: 0 !important;
+  }
+  tr {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+} */
   

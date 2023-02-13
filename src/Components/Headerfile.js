@@ -164,7 +164,7 @@ function Headerfile() {
   ));
 
   return (
-    <Box pb={120}>
+    <Box px={60}>
       <Header height={60} px="md">
         <Group position="apart" sx={{ height: "100%" }}>
           <img src={logo} radius="xl" size={20} className={classes.images} />

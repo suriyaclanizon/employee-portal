@@ -61,6 +61,11 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   mainpart: {
     height: "100%",
   },
+  Containerpart: {
+    backgroundColor: "#ebe3e3",
+    height: "calc(100vh - 120px)",
+    padding: "30px 90px",
+  },
 
   // mainSection: {
   //   paddingBottom: theme.spacing.sm,
@@ -119,14 +124,13 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     },
   },
   btn: {
-    color: "#9feb09",
-    width: "85px",
-    paddingLeft: "50px",
+    background: "#9feb09",
+    color: "white",
   },
   center: {
-    padding: "50px",
+    // padding: "50px",
     border: "2px gray solid",
-    margin: "10px",
+    marginTop: "30px",
     borderRadius: "10px",
   },
   Container: {
@@ -137,15 +141,25 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   contentleft: {
     width: "20%",
+    borderRight: "1px solid grey",
+    height: "100%"
   },
   contentright: {
-    width: "80%,",
+    width: "100%",
+    padding: "15px 30px",
   },
   content: {
     width: "100%",
-    border: "2px gray solid",
-    paddingBottom: "10px",
+    height: "100%",
+    border: "1px gray solid",
     borderRadius: "10px",
+    background: "white",
+  },
+  tabstyles: {
+    height: "100%",
+  },
+  thead_styles: {
+    background: "aliceblue",
   },
 }));
 
@@ -158,9 +172,10 @@ export default function HeaderTabs(HeaderTabsProps) {
   return (
     <>
       <Headerfile></Headerfile>
-      <Container>
+      <div className={classes.Containerpart}>
+      {/* <Container> */}
         <div className={classes.content}>
-          <Tabs defaultValue="gallery" orientation="vertical">
+          <Tabs defaultValue="gallery" orientation="vertical" className={classes.tabstyles}>
             <div className={classes.contentleft}>
               <Tabs.List>
                 <Tabs.Tab value="punch">punch</Tabs.Tab>
@@ -169,14 +184,14 @@ export default function HeaderTabs(HeaderTabsProps) {
             </div>
             <div className={classes.contentright}>
               <Tabs.Panel value="punch">
-                <div className={classes.btn}>
-                  <Button fullWidth mt="xs" size="xs">
+                <div>
+                  <Button mt="xs" size="xs" className={classes.btn}>
                     Punch In
                   </Button>
                 </div>
                 <div className={classes.center}>
                   <Table sx={{ minWidth: 600 }}>
-                    <thead>
+                    <thead className={classes.thead_styles}>
                       <tr>
                         <th>Date</th>
                         <th>Day</th>
@@ -221,8 +236,8 @@ export default function HeaderTabs(HeaderTabsProps) {
             </div>
           </Tabs>
         </div>
-      </Container>
-      {/* </div> */}
+      {/* </Container> */}
+      </div>
     </>
   );
 }
