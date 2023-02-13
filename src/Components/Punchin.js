@@ -144,7 +144,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   content: {
     width: "100%",
     border: "2px gray solid",
-    margin: "10px",
+    paddingBottom: "10px",
     borderRadius: "10px",
   },
 }));
