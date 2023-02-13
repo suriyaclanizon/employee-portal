@@ -14,4 +14,10 @@
     display: flex;
     justify-content: space-between;
 } */
-  
+table {
+  border-collapse: collapse;
+}
+table td, table th {
+  padding: 12px !important;
+  border: none;
+}
