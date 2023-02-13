@@ -12,6 +12,7 @@ import {
 } from "@mantine/core";
 
 import clanizon from "../assets/clanizon.png";
+import { Link } from "react-router-dom";
 
 const useStyles = createStyles((theme) => ({
   form: {
@@ -29,17 +30,21 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
   },
   left: {
-    width: "50%",
+    width: "45%",
     height: "100vh",
   },
   right: {
-    width: "50%",
+    marginLeft: "45px",
+    width: "55%",
     float: "right",
     height: "100vh",
   },
   title: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+  },
+  label: {
+    marginBottom: "15px",
   },
 }));
 
@@ -67,6 +72,7 @@ export function SignUp() {
               label="User Name"
               placeholder="hello@gmail.com"
               size="md"
+              labelProps={{ className: classes.label }}
             />
             <TextInput label="Email" placeholder="hello@gmail.com" size="md" />
             <PasswordInput
@@ -74,12 +80,14 @@ export function SignUp() {
               placeholder="Your password"
               mt="md"
               size="md"
+              labelProps={{ className: classes.label }}
             />
             <PasswordInput
               label="Reset Password"
               placeholder="Your password"
               mt="md"
               size="md"
+              labelProps={{ className: classes.label }}
             />
             <Button fullWidth mt="xl" size="md">
               Create Account
@@ -87,13 +95,9 @@ export function SignUp() {
 
             <Text align="left" mt="md">
               Already have an account{" "}
-              <Anchor
-                href="#"
-                weight={700}
-                onClick={(event) => event.preventDefault()}
-              >
-                Sign up
-              </Anchor>
+              <Link to="/">
+                <Anchor weight={700}>Login</Anchor>
+              </Link>
             </Text>
           </Paper>
         </div>

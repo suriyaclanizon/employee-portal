@@ -29,17 +29,21 @@ const useStyles = createStyles((theme) => ({
     display: "flex",
   },
   left: {
-    width: "50%",
+    width: "45%",
     height: "100vh",
   },
   right: {
-    width: "50%",
+    marginLeft: "45px",
+    width: "55%",
     float: "right",
     height: "100vh",
   },
   title: {
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+  },
+  label: {
+    marginBottom: "15px",
   },
 }));
 
@@ -67,23 +71,22 @@ export function Login() {
               label="User Name"
               placeholder="hello@gmail.com"
               size="md"
+              labelProps={{ className: classes.label }}
             />
             <PasswordInput
               label="Password"
               placeholder="Your password"
               mt="md"
               size="md"
+              labelProps={{ className: classes.label }}
             />
             <Group position="apart" mt="lg">
               <Checkbox label="Remember me" sx={{ lineHeight: 1 }} />
-              <Anchor
-                onClick={(event) => event.preventDefault()}
-                href="#"
-                size="sm"
-              >
-                Forgot password?
-              </Anchor>
+              <Link to="/Forgetpwd">
+                <Anchor size="sm">Forgot password?</Anchor>
+              </Link>
             </Group>
+
             <Link to="/Punchin">
               <Button fullWidth mt="xl" size="md">
                 Login
@@ -91,13 +94,15 @@ export function Login() {
             </Link>
             <Text align="left" mt="md">
               New user?{" "}
-              <Anchor
-                href="#"
-                weight={700}
-                onClick={(event) => event.preventDefault()}
-              >
-                Sign up
-              </Anchor>
+              <Link to="/SignUp">
+                <Anchor
+                  // href="#"
+                  weight={700}
+                  // onClick={(event) => event.preventDefault()}
+                >
+                  Sign up
+                </Anchor>
+              </Link>
             </Text>
           </Paper>
         </div>
