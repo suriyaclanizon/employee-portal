@@ -195,7 +195,7 @@ export default function HeaderTabs(HeaderTabsProps) {
         {/* <Container> */}
         <div className={classes.content}>
           <Tabs
-            defaultValue="gallery"
+            defaultValue="punch"
             orientation="vertical"
             className={classes.tabstyles}
           >

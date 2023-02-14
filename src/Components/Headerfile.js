@@ -104,6 +104,9 @@ const useStyles = createStyles((theme) => ({
       display: "none",
     },
   },
+  header: {
+    border: "0",
+  },
 }));
 
 const mockdata = [
@@ -165,7 +168,7 @@ function Headerfile() {
 
   return (
     <Box px={60}>
-      <Header height={60} px="md">
+      <Header height={60} px="md" className={classes.header}>
         <Group position="apart" sx={{ height: "100%" }}>
           <img src={logo} radius="xl" size={20} className={classes.images} />
 
