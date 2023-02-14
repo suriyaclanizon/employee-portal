@@ -32,9 +32,12 @@ const useStyles = createStyles((theme) => ({
     width: "45%",
     height: "100vh",
   },
+  head: {
+    color: "#a4a4a4 !important",
+  },
   last: {
     textAlign: "center",
-    color: "gray !important",
+    color: "#a4a4a4 !important",
     paddingTop: "20px",
   },
   right: {
@@ -44,12 +47,14 @@ const useStyles = createStyles((theme) => ({
     height: "100vh",
   },
   title: {
+    fontWeight: "500",
+    fontSize: "35px",
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
   },
-  label: {
-    marginBottom: "15px",
-  },
+  // label: {
+  //   marginBottom: "15px",
+  // },
 }));
 
 export function Forgetpwd() {

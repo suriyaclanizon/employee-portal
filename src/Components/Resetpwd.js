@@ -37,6 +37,9 @@ const useStyles = createStyles((theme) => ({
     color: "gray !important",
     paddingTop: "20px",
   },
+  head: {
+    color: "#a4a4a4 !important",
+  },
   title: {
     width: "260px",
     height: "51px",
@@ -51,6 +54,10 @@ const useStyles = createStyles((theme) => ({
     width: "55%",
     float: "right",
     height: "100vh",
+  },
+  title: {
+    fontWeight: "500",
+    fontSize: "35px",
   },
   // label: {
   //   marginBottom: "15px",

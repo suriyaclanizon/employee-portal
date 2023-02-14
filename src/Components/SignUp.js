@@ -40,6 +40,8 @@ const useStyles = createStyles((theme) => ({
     width: "55%",
   },
   title: {
+    fontWeight: "500",
+    fontSize: "35px",
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
   },

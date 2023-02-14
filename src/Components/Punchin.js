@@ -129,7 +129,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   btn: {
     background: "#9feb09",
-    color: "white",
+    color: "#ffffff",
   },
   center: {
     border: "1px #d8d8d8 solid",
@@ -168,7 +168,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   topic: {
     fontSize: "20px",
-    color: "skyblue",
+    color: "#1f96de",
     fontWeight: "600",
   },
   tabicons: {

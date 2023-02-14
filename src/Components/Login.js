@@ -15,7 +15,7 @@ import clanizon from "../assets/clanizon.png";
 
 const useStyles = createStyles((theme) => ({
   form: {
-    maxWidth: 600,
+    width: "50%",
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
       maxWidth: "100%",
     },
@@ -33,14 +33,15 @@ const useStyles = createStyles((theme) => ({
     height: "100vh",
   },
   right: {
-    marginLeft: "45px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     width: "55%",
-    float: "right",
-    height: "100vh",
   },
   title: {
+    fontWeight: "500",
+    fontSize: "35px",
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
   },
   label: {
     marginBottom: "15px",
@@ -56,7 +57,7 @@ export function Login() {
           <img src={clanizon} alt="clanizon" className={classes.images} />
         </div>
         <div className={classes.right}>
-          <Paper className={classes.form} radius={0} p={120} align="left">
+          <Paper className={classes.form} radius={0} align="left">
             <Title
               order={2}
               className={classes.title}
