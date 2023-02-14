@@ -93,8 +93,8 @@ export function SignUp() {
               Create Account
             </Button>
 
-            <Text align="left" mt="md">
-              Already have an account{" "}
+            <Text align="center" mt="md">
+              Already have an account?{" "}
               <Link to="/">
                 <Anchor weight={700}>Login</Anchor>
               </Link>
