@@ -1,11 +1,13 @@
-
-  body {
-   font-family: Jost;
-  }
-  @font-face {
-   font-family: Jost;
+body {
+  font-family: Jost;
+}
+@font-face {
+  font-family: Jost;
   src: url(./Fonts/Jost-Regular.ttf);
-  }
+}
+a{
+  text-decoration: none;
+}
   /* th{
     border: 0 !important;
   }
@@ -21,3 +23,20 @@ table td, table th {
   padding: 12px !important;
   border: none;
 }
+.mantine-Tabs-tabsList{
+  border: 0;
+}
+.mantine-Tabs-tab{
+  /* border-bottom: 1px solid black; */
+  padding: 15px;
+  /* margin: 3px; */
+  /* border-radius: 0; */
+}
+.mantine-Tabs-tabLabel{
+  display: flex;
+  align-items: center;
+}
+/* .mantine-mhsckw[data-active]{
+  border: 0;
+  color: aqua;
+} */

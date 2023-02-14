@@ -45,6 +45,8 @@ import profile from "../assets/profile.png";
 import clanizon from "../assets/clanizon.png";
 import logo from "../assets/logo.png";
 import Headerfile from "./Headerfile";
+import punch from "../assets/punch.png";
+import payslip from "../assets/payslip.png";
 
 const useStyles = createStyles((theme, _params, getRef) => ({
   header: {
@@ -161,6 +163,11 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   thead_styles: {
     background: "aliceblue",
   },
+  tabicons: {
+    width: "20px",
+    height: "20px",
+    marginRight: "10px",
+  },
 }));
 
 export default function HeaderTabs(HeaderTabsProps) {
@@ -178,8 +185,8 @@ export default function HeaderTabs(HeaderTabsProps) {
           <Tabs defaultValue="gallery" orientation="vertical" className={classes.tabstyles}>
             <div className={classes.contentleft}>
               <Tabs.List>
-                <Tabs.Tab value="punch">punch</Tabs.Tab>
-                <Tabs.Tab value="payslip">payslip</Tabs.Tab>
+                <Tabs.Tab value="punch"><img src={punch} className={classes.tabicons} /><span>Punch</span></Tabs.Tab>
+                <Tabs.Tab value="payslip"><img src={payslip} className={classes.tabicons} /><span>Payslip</span></Tabs.Tab>
               </Tabs.List>
             </div>
             <div className={classes.contentright}>
