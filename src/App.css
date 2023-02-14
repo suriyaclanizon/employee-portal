@@ -19,6 +19,11 @@ thead {
 table td, table th {
   padding: 12px !important;
   border: none !important;
+  font-size: 17px !important;
+}
+table th {
+  color: gray !important;
+  font-weight: 500 !important;
 }
 .mantine-Tabs-tabsList{
   border: 0;

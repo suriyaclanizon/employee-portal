@@ -47,6 +47,8 @@ import logo from "../assets/logo.png";
 import Headerfile from "./Headerfile";
 import punch from "../assets/punch.png";
 import payslip from "../assets/payslip.png";
+import down from "../assets/down.png";
+import download from "../assets/download.png";
 
 const useStyles = createStyles((theme, _params, getRef) => ({
   header: {
@@ -134,7 +136,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     marginTop: "30px",
     borderRadius: "10px",
     maxHeight: "calc(100vh - 230px)",
-    overflowY: 'auto',
+    overflowY: "auto",
   },
   Container: {
     backgroundColor: "gray !important",
@@ -145,7 +147,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   contentleft: {
     width: "20%",
     borderRight: "1px solid #f0f0f0",
-    height: "100%"
+    height: "100%",
   },
   contentright: {
     width: "100%",
@@ -164,10 +166,20 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     background: "aliceblue",
     textAlign: "left",
   },
+  topic: {
+    fontSize: "20px",
+    color: "skyblue",
+    fontWeight: "600",
+  },
   tabicons: {
     width: "20px",
     height: "20px",
     marginRight: "10px",
+  },
+  tabicons1: {
+    width: "20px",
+    height: "20px",
+    marginLeft: "10px",
   },
 }));
 
@@ -175,19 +187,28 @@ export default function HeaderTabs(HeaderTabsProps) {
   const { classes, theme, cx } = useStyles();
   const [opened, { toggle }] = useDisclosure(false);
   const [userMenuOpened, setUserMenuOpened] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   return (
     <>
       <Headerfile></Headerfile>
       <div className={classes.Containerpart}>
-      {/* <Container> */}
+        {/* <Container> */}
         <div className={classes.content}>
-          <Tabs defaultValue="gallery" orientation="vertical" className={classes.tabstyles}>
+          <Tabs
+            defaultValue="gallery"
+            orientation="vertical"
+            className={classes.tabstyles}
+          >
             <div className={classes.contentleft}>
               <Tabs.List>
-                <Tabs.Tab value="punch"><img src={punch} className={classes.tabicons} /><span>Punch</span></Tabs.Tab>
-                <Tabs.Tab value="payslip"><img src={payslip} className={classes.tabicons} /><span>Payslip</span></Tabs.Tab>
+                <Tabs.Tab value="punch">
+                  <img src={punch} className={classes.tabicons} />
+                  <span>Punch</span>
+                </Tabs.Tab>
+                <Tabs.Tab value="payslip">
+                  <img src={payslip} className={classes.tabicons} />
+                  <span>Payslip</span>
+                </Tabs.Tab>
               </Tabs.List>
             </div>
             <div className={classes.contentright}>
@@ -208,81 +229,84 @@ export default function HeaderTabs(HeaderTabsProps) {
                       </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
-                    <tr>
-                      <td>10/01/2022</td>
-                      <td>Monday</td>
-                      <td>10:00 AM</td>
-                      <td>05:00 PM</td>
-                    </tr>
+                      <tr>
+                        <td>10/01/2022</td>
+                        <td>Monday</td>
+                        <td>10:00 AM</td>
+                        <td>05:00 PM</td>
+                      </tr>
+                      <tr>
+                        <td>10/01/2022</td>
+                        <td>Monday</td>
+                        <td>10:00 AM</td>
+                        <td>05:00 PM</td>
+                      </tr>
                     </tbody>
                   </Table>
                 </div>
               </Tabs.Panel>
-              <Tabs.Panel value="payslip">Messages tab content</Tabs.Panel>
+              <Tabs.Panel value="payslip">
+                <div className={classes.topic}>
+                  <span>Pay Slip</span>
+                  <img src={down} className={classes.tabicons1} />
+                </div>
+                <div className={classes.center}>
+                  <Table sx={{ minWidth: 600 }}>
+                    <thead className={classes.thead_styles}>
+                      <tr>
+                        <th>Month</th>
+                        <th>Gross pay</th>
+                        <th>Net wage</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tr>
+                      <td> Aug, 2022</td>
+                      <td>$6756</td>
+                      <td>$875 </td>
+                      <td>
+                        <img src={download} className={classes.tabicons} />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> Aug, 2022</td>
+                      <td> $6756</td>
+                      <td>$875</td>
+                      <td>
+                        <img src={download} className={classes.tabicons} />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> Aug, 2022</td>
+                      <td> $6756</td>
+                      <td>$875</td>
+                      <td>
+                        <img src={download} className={classes.tabicons} />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> Aug, 2022</td>
+                      <td> $6756</td>
+                      <td>$875</td>
+                      <td>
+                        <img src={download} className={classes.tabicons} />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td> Aug, 2022</td>
+                      <td>$6756</td>
+                      <td>$875 </td>
+                      <td>
+                        <img src={download} className={classes.tabicons} />
+                      </td>
+                    </tr>
+                  </Table>
+                </div>
+              </Tabs.Panel>
             </div>
           </Tabs>
         </div>
-      {/* </Container> */}
+        {/* </Container> */}
       </div>
     </>
   );
