@@ -64,7 +64,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     height: "100%",
   },
   Containerpart: {
-    backgroundColor: "#ebe3e3",
+    backgroundColor: "#f0f0f0",
     height: "calc(100vh - 120px)",
     padding: "30px 90px",
   },
@@ -130,10 +130,11 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     color: "white",
   },
   center: {
-    // padding: "50px",
-    border: "2px gray solid",
+    border: "1px #d8d8d8 solid",
     marginTop: "30px",
     borderRadius: "10px",
+    maxHeight: "calc(100vh - 230px)",
+    overflowY: 'auto',
   },
   Container: {
     backgroundColor: "gray !important",
@@ -143,7 +144,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   contentleft: {
     width: "20%",
-    borderRight: "1px solid grey",
+    borderRight: "1px solid #f0f0f0",
     height: "100%"
   },
   contentright: {
@@ -153,8 +154,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   content: {
     width: "100%",
     height: "100%",
-    border: "1px gray solid",
-    borderRadius: "10px",
+    borderRadius: "20px",
     background: "white",
   },
   tabstyles: {
@@ -162,6 +162,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
   thead_styles: {
     background: "aliceblue",
+    textAlign: "left",
   },
   tabicons: {
     width: "20px",
@@ -206,6 +207,7 @@ export default function HeaderTabs(HeaderTabsProps) {
                         <th>Out Time</th>
                       </tr>
                     </thead>
+                    <tbody>
                     <tr>
                       <td>10/01/2022</td>
                       <td>Monday</td>
@@ -236,6 +238,43 @@ export default function HeaderTabs(HeaderTabsProps) {
                       <td>10:00 AM</td>
                       <td>05:00 PM</td>
                     </tr>
+                    <tr>
+                      <td>10/01/2022</td>
+                      <td>Monday</td>
+                      <td>10:00 AM</td>
+                      <td>05:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>10/01/2022</td>
+                      <td>Monday</td>
+                      <td>10:00 AM</td>
+                      <td>05:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>10/01/2022</td>
+                      <td>Monday</td>
+                      <td>10:00 AM</td>
+                      <td>05:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>10/01/2022</td>
+                      <td>Monday</td>
+                      <td>10:00 AM</td>
+                      <td>05:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>10/01/2022</td>
+                      <td>Monday</td>
+                      <td>10:00 AM</td>
+                      <td>05:00 PM</td>
+                    </tr>
+                    <tr>
+                      <td>10/01/2022</td>
+                      <td>Monday</td>
+                      <td>10:00 AM</td>
+                      <td>05:00 PM</td>
+                    </tr>
+                    </tbody>
                   </Table>
                 </div>
               </Tabs.Panel>

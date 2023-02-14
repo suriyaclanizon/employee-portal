@@ -8,20 +8,17 @@ body {
 a{
   text-decoration: none;
 }
-  /* th{
-    border: 0 !important;
-  }
-  tr {
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-} */
 table {
   border-collapse: collapse;
 }
+thead {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
 table td, table th {
   padding: 12px !important;
-  border: none;
+  border: none !important;
 }
 .mantine-Tabs-tabsList{
   border: 0;
