@@ -52,9 +52,9 @@ const useStyles = createStyles((theme) => ({
     float: "right",
     height: "100vh",
   },
-  label: {
-    marginBottom: "15px",
-  },
+  // label: {
+  //   marginBottom: "15px",
+  // },
 }));
 
 export function Resetpwd() {

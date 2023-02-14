@@ -28,6 +28,9 @@ table th {
 .mantine-Tabs-tabsList{
   border: 0;
 }
+label{
+padding: 10px 0 !important;
+}
 .mantine-Tabs-tab{
   /* border-bottom: 1px solid black; */
   padding: 20px 30px;
