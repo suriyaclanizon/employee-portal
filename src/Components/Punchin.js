@@ -47,8 +47,10 @@ import logo from "../assets/logo.png";
 import Headerfile from "./Headerfile";
 import punch from "../assets/punch.png";
 import payslip from "../assets/payslip.png";
+import leave from "../assets/leave.png";
 import down from "../assets/down.png";
 import download from "../assets/download.png";
+import Leave from "./Leave";
 
 const useStyles = createStyles((theme, _params, getRef) => ({
   header: {
@@ -170,6 +172,8 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     fontSize: "20px",
     color: "#1f96de",
     fontWeight: "600",
+    display: "flex !important",
+    marginTop: "10px",
   },
   tabicons: {
     width: "20px",
@@ -177,10 +181,14 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     marginRight: "10px",
   },
   tabicons1: {
-    width: "20px",
-    height: "20px",
-    marginLeft: "10px",
+    width: "30px",
+    height: "30px",
+    marginLeft: "20px",
   },
+  payslipIcon: {
+   
+  }
+  
 }));
 
 export default function HeaderTabs(HeaderTabsProps) {
@@ -209,6 +217,11 @@ export default function HeaderTabs(HeaderTabsProps) {
                   <img src={payslip} className={classes.tabicons} />
                   <span>Payslip</span>
                 </Tabs.Tab>
+                <Tabs.Tab value="Leave">
+                  <img src={leave} className={classes.tabicons} />
+                  <span className="leave_content">Leave</span>
+                </Tabs.Tab>
+                
               </Tabs.List>
             </div>
             <div className={classes.contentright}>
@@ -248,7 +261,8 @@ export default function HeaderTabs(HeaderTabsProps) {
               <Tabs.Panel value="payslip">
                 <div className={classes.topic}>
                   <span>Pay Slip</span>
-                  <img src={down} className={classes.tabicons1} />
+                  <div className={classes.payslipIcon}>
+                  <img src={down} className={classes.tabicons1} /></div>
                 </div>
                 <div className={classes.center}>
                   <Table sx={{ minWidth: 600 }}>
@@ -303,6 +317,7 @@ export default function HeaderTabs(HeaderTabsProps) {
                   </Table>
                 </div>
               </Tabs.Panel>
+              <Leave></Leave>
             </div>
           </Tabs>
         </div>
