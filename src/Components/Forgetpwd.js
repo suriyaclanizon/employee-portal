@@ -52,9 +52,9 @@ const useStyles = createStyles((theme) => ({
     color: theme.colorScheme === "dark" ? theme.white : theme.black,
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
   },
-  // label: {
-  //   marginBottom: "15px",
-  // },
+  label: {
+    marginBottom: "15px",
+  },
 }));
 
 export function Forgetpwd() {

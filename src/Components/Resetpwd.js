@@ -59,9 +59,9 @@ const useStyles = createStyles((theme) => ({
     fontWeight: "500",
     fontSize: "35px",
   },
-  // label: {
-  //   marginBottom: "15px",
-  // },
+  label: {
+    marginBottom: "15px",
+  },
 }));
 
 export function Resetpwd() {
