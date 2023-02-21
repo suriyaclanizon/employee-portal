@@ -10,6 +10,7 @@ import {
   Group,
   Anchor,
 } from "@mantine/core";
+import { useForm } from "@mantine/form";
 import clanizon from "../assets/clanizon.png";
 import { Link } from "react-router-dom";
 
@@ -66,6 +67,17 @@ const useStyles = createStyles((theme) => ({
 
 export function Resetpwd() {
   const { classes } = useStyles();
+  const form = useForm({
+    initialValues: {
+      password: "secret",
+      confirmPassword: "sevret",
+    },
+
+    validate: {
+      confirmPassword: (value, values) =>
+        value !== values.password ? "Passwords did not match" : null,
+    },
+  });
   return (
     <div className={classes.wrapper}>
       <div className={classes.content}>
@@ -83,25 +95,32 @@ export function Resetpwd() {
             >
               Reset Password?
             </Title>
-            <PasswordInput
-              label="Password"
-              placeholder="Your password"
-              mt="md"
-              size="md"
-              labelProps={{ className: classes.label }}
-            />
-            <PasswordInput
-              label="Reset Password"
-              placeholder="Your password"
-              mt="md"
-              size="md"
-              labelProps={{ className: classes.label }}
-            />
+            <form onSubmit={form.onSubmit((values) => console.log(values))}>
+              <PasswordInput
+                label="Password"
+                placeholder="Your password"
+                mt="md"
+                size="md"
+                labelProps={{ className: classes.label }}
+                {...form.getInputProps("password")}
+              />
+              <PasswordInput
+                label="Confirm Password"
+                placeholder="Your password"
+                mt="md"
+                size="md"
+                labelProps={{ className: classes.label }}
+                {...form.getInputProps("confirmPassword")}
+              />
+              <Button type="submit" mt="xl" size="md">
+                {" "}
+                Reset Password
+              </Button>
 
-            <Button fullWidth mt="xl" size="md">
-              Reset Password
-            </Button>
-
+              {/* <Button fullWidth mt="xl" size="md">
+                Reset Password
+              </Button> */}
+            </form>
             <div className={classes.last}>
               <Link to="/">
                 <Anchor className={classes.head} weight={700}>
