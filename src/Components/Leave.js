@@ -39,6 +39,8 @@ import {
     IconTrash,
     IconChevronDown,
   } from "@tabler/icons";
+import { LeaveDialog } from "./LeaveDialog";
+import { hover } from "@testing-library/user-event/dist/hover";
 
   const useStyles = createStyles((theme, _params, getRef) => ({
     header: {
@@ -160,8 +162,9 @@ import {
       fontSize: "20px",
       color: "#1f96de",
       fontWeight: "600",
-      marginTop: "40px",
+      marginTop: "20px",
       marginBottom: "20px",
+      display: "flex",
     },
     tabicons: {
       width: "20px",
@@ -174,7 +177,8 @@ import {
       marginLeft: "10px",
     },
     applybtn: {
-        float: "right",
+        width: "100%",
+        margin: "0 auto",
     },
     heading1: {
         fontSize: "14px !important",
@@ -219,6 +223,11 @@ import {
         fontWeight: "500",
         textAlign: "center !important", 
       },
+      approvebtn: {
+        color: "#90c300 !important",
+        backgroundColor: "rgba(144, 195, 0, 0.2)",
+      },
+      
   }));
   
   
@@ -233,9 +242,10 @@ export function Leave() {
         <Tabs.Panel value="Leave">
                 <div className={classes.topic}>
                   <span>History</span>
-                  <Button className={classes.applybtn} variant="light">
+                  <div className= {classes.applybtn}><LeaveDialog></LeaveDialog></div>
+                  {/* <Button className={classes.applybtn} variant="light">
                     Apply
-                  </Button>
+                  </Button> */}
                 </div>
                 <div className={classes.center}>
                   <Table sx={{ minWidth: 600 }}>
@@ -256,7 +266,7 @@ export function Leave() {
                       <td className={classes.content}> 4 days  </td>
                       <td className={classes.content}> Pavithra  </td>
                       <td className={classes.content}>
-                        <Button>
+                        <Button className={classes.approvebtn}>
                           Approved
                         </Button>
                       </td>
@@ -268,7 +278,7 @@ export function Leave() {
                       <td className={classes.content}> 2 days  </td>
                       <td className={classes.content}> Surya  </td>
                       <td className={classes.content}>
-                        <Button>
+                        <Button className={classes.approvebtn}>
                           Approved
                         </Button>
                       </td>

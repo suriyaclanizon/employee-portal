@@ -52,7 +52,44 @@ label{
   background-color: rgba(144, 195, 0, 0.2);
 }
 
+.mantine-cx9mud{
+  color: #1f96de !important;
+  font-size: 14px;
+}
+.mantine-1y9bl4z{
+  border-radius: 0px;
+}
+.mantine-ittua2{
+  color: #2e2e2e !important;
+  font-size: 16px;
+}
+/* input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+} */
+::placeholder{
+  color: rgba(31, 150, 222, 0.3);
+  opacity: 1;
+  font-size: 12px;
+}
+.mantine-Select-input  {
+  color: #747588 !important;
+  font-size: 12px !important;
+  border-radius: 0px;
+  width: 203px;
+  height: 37px;
+}
+.mantine-1xd4atn:hover{
+  background-color: rgba(216, 216, 216, 0.6);
+}
 
+.cancelbtn:hover{
+  background-color: none;
+}
+.approvebtn:hover{
+  background-color: rgba(144, 195, 0, 0.2);
+}
 /* .mantine-mhsckw[data-active]{
   border: 0;
   color: aqua;
