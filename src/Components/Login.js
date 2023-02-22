@@ -11,7 +11,7 @@ import {
   Group,
   Anchor,
 } from "@mantine/core";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "@mantine/form";
 import clanizon from "../assets/clanizon.png";
 
@@ -69,6 +69,12 @@ export function Login() {
     },
     onSubmit: (values) => console.log(values),
   });
+  const navigate = useNavigate();
+
+  const aji = (value) => {
+    console.log(value);
+    navigate("/Punchin");
+  };
 
   return (
     <div className={classes.wrapper}>
@@ -87,7 +93,12 @@ export function Login() {
             >
               Login
             </Title>
-            <form onSubmit={form.onSubmit(console.log)}>
+            <form
+              onSubmit={form.onSubmit((values) => {
+                console.log(values);
+                aji(values);
+              })}
+            >
               <TextInput
                 label="User Name"
                 placeholder="Enter the name"

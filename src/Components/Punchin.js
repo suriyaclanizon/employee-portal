@@ -132,6 +132,9 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   btn: {
     background: "#9feb09",
     color: "#ffffff",
+    "&:hover": {
+      backgroundColor: "#9feb09",
+    },
   },
   center: {
     border: "1px #d8d8d8 solid",
@@ -185,10 +188,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     height: "30px",
     marginLeft: "20px",
   },
-  payslipIcon: {
-   
-  }
-  
+  payslipIcon: {},
 }));
 
 export default function HeaderTabs(HeaderTabsProps) {
@@ -221,7 +221,6 @@ export default function HeaderTabs(HeaderTabsProps) {
                   <img src={leave} className={classes.tabicons} />
                   <span className="leave_content">Leave</span>
                 </Tabs.Tab>
-                
               </Tabs.List>
             </div>
             <div className={classes.contentright}>
@@ -232,7 +231,7 @@ export default function HeaderTabs(HeaderTabsProps) {
                   </Button>
                 </div>
                 <div className={classes.center}>
-                  <Table sx={{ minWidth: 600 }}>
+                  <Table>
                     <thead className={classes.thead_styles}>
                       <tr>
                         <th>Date</th>
@@ -262,7 +261,8 @@ export default function HeaderTabs(HeaderTabsProps) {
                 <div className={classes.topic}>
                   <span>Pay Slip</span>
                   <div className={classes.payslipIcon}>
-                  <img src={down} className={classes.tabicons1} /></div>
+                    <img src={down} className={classes.tabicons1} />
+                  </div>
                 </div>
                 <div className={classes.center}>
                   <Table sx={{ minWidth: 600 }}>
