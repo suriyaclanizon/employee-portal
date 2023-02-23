@@ -65,13 +65,13 @@ export function Login() {
       Password: (value) =>
         /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{5,}$/.test(value)
           ? null
-          : "Invalid password",
+          : "Must contain at least one number & one uppercase & lowercase letter & 5 or more characters",
     },
     onSubmit: (values) => console.log(values),
   });
   const navigate = useNavigate();
 
-  const aji = (value) => {
+  const handle = (value) => {
     console.log(value);
     navigate("/Punchin");
   };
@@ -96,7 +96,7 @@ export function Login() {
             <form
               onSubmit={form.onSubmit((values) => {
                 console.log(values);
-                aji(values);
+                handle(values);
               })}
             >
               <TextInput

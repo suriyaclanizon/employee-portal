@@ -60,6 +60,9 @@ const useStyles = createStyles((theme) => ({
     fontWeight: "500",
     fontSize: "35px",
   },
+  btn: {
+    width: "100%",
+  },
   label: {
     marginBottom: "15px",
   },
@@ -112,7 +115,7 @@ export function Resetpwd() {
                 labelProps={{ className: classes.label }}
                 {...form.getInputProps("confirmPassword")}
               />
-              <Button type="submit" mt="xl" size="md">
+              <Button type="submit" mt="xl" size="md" className={classes.btn}>
                 {" "}
                 Reset Password
               </Button>

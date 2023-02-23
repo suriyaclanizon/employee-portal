@@ -265,7 +265,7 @@ export default function HeaderTabs(HeaderTabsProps) {
                   </div>
                 </div>
                 <div className={classes.center}>
-                  <Table sx={{ minWidth: 600 }}>
+                  <Table>
                     <thead className={classes.thead_styles}>
                       <tr>
                         <th>Month</th>

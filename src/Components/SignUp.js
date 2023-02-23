@@ -10,9 +10,9 @@ import {
   Group,
   Anchor,
 } from "@mantine/core";
-
+import { useForm } from "@mantine/form";
 import clanizon from "../assets/clanizon.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const useStyles = createStyles((theme) => ({
   form: {
@@ -39,6 +39,9 @@ const useStyles = createStyles((theme) => ({
     justifyContent: "center",
     width: "55%",
   },
+  btn: {
+    width: "100%",
+  },
   title: {
     fontWeight: "500",
     fontSize: "35px",
@@ -52,6 +55,27 @@ const useStyles = createStyles((theme) => ({
 
 export function SignUp() {
   const { classes } = useStyles();
+  const form = useForm({
+    initialValues: { name: "" },
+
+    // functions will be used to validate values at corresponding key
+    validate: {
+      name: (value) =>
+        value.length < 2 ? "Name must have at least 2 letters" : null,
+      Password: (value) =>
+        /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{5,}$/.test(value)
+          ? null
+          : "Must contain at least one number & one uppercase & lowercase letter & 5 or more characters",
+      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
+    },
+    onSubmit: (values) => console.log(values),
+  });
+  const navigate = useNavigate();
+
+  const handle = (value) => {
+    console.log(value);
+    navigate("/Punchin");
+  };
   return (
     <div className={classes.wrapper}>
       <div className={classes.content}>
@@ -69,38 +93,46 @@ export function SignUp() {
             >
               Sign Up
             </Title>
-
-            <TextInput
-              label="User Name"
-              placeholder="hello@gmail.com"
-              size="md"
-              labelProps={{ className: classes.label }}
-            />
-            <TextInput
-              label="Email"
-              placeholder="hello@gmail.com"
-              mt="md"
-              size="md"
-              labelProps={{ className: classes.label }}
-            />
-            <PasswordInput
-              label="Password"
-              placeholder="Your password"
-              mt="md"
-              size="md"
-              labelProps={{ className: classes.label }}
-            />
-            <PasswordInput
-              label="Reset Password"
-              placeholder="Your password"
-              mt="md"
-              size="md"
-              labelProps={{ className: classes.label }}
-            />
-            <Button fullWidth mt="xl" size="md">
-              Create Account
-            </Button>
-
+            <form
+              onSubmit={form.onSubmit((values) => {
+                console.log(values);
+                handle(values);
+              })}
+            >
+              <TextInput
+                label="User Name"
+                placeholder="Enter the name"
+                size="md"
+                {...form.getInputProps("name")}
+                labelProps={{ className: classes.label }}
+              />
+              <TextInput
+                label="Email"
+                placeholder="hello@gmail.com"
+                mt="md"
+                size="md"
+                {...form.getInputProps("email")}
+                labelProps={{ className: classes.label }}
+              />
+              <PasswordInput
+                label="Password"
+                placeholder="Your password"
+                mt="md"
+                size="md"
+                {...form.getInputProps("Password")}
+                labelProps={{ className: classes.label }}
+              />
+              <PasswordInput
+                label="Reset Password"
+                placeholder="Your password"
+                mt="md"
+                size="md"
+                labelProps={{ className: classes.label }}
+              />
+              <Button type="submit" mt="xl" size="md" className={classes.btn}>
+                Create Account
+              </Button>
+            </form>
             <Text align="center" mt="md">
               Already have an account?{" "}
               <Link to="/">
